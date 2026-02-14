@@ -414,7 +414,7 @@ export class NextjsSite extends SsrSite {
           pattern: behavior.pattern === "*" ? undefined : behavior.pattern,
           origin: behavior.origin!,
           cacheType: behavior.origin === "s3" ? "static" : "server",
-          cfFunction: "serverCfFunction",
+          cfFunction: "serverCfFunction" as const,
           edgeFunction: behavior.edgeFunction ?? "",
         };
       }),
